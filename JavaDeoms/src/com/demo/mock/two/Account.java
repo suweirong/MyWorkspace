@@ -7,7 +7,7 @@ package com.demo.mock.two;
  */
 public class Account{
 	private String accountId;
-	private long balance;
+	private long balance;//
 
 	public Account(String accountId, long initialBalance) {
 		this.accountId = accountId;
