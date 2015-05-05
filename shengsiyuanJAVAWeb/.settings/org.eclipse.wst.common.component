@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="shengsiyuanJAVAWeb">
+    <wb-module deploy-name="JavaWeb-shengsiyuan">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="java-output-path" value="/shengsiyuanJAVAWeb/WebRoot/WEB-INF/classes"/>
-        <property name="context-root" value="shengsiyuanJAVAWeb"/>
+        <property name="java-output-path" value="/JavaWeb-shengsiyuan/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="JavaWeb-shengsiyuan"/>
     </wb-module>
 </project-modules>
