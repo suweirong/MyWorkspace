@@ -1,0 +1,15 @@
+
+	TopPlate
+			Plate11
+					  apple*2
+			 		  kiwi*1
+			apple
+		
+			Plate12
+			 	 	  Plate121
+			  		 			kiwi
+			  		  
+			  		  Plate122
+			  					Plate1221
+			  								kiwi*1
+			  		  apple*3		

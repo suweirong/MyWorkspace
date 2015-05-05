@@ -13,11 +13,20 @@ public class TestCachedThreadPool {
 //                ExecutorService executorService = Executors.newCachedThreadPool(); 
                 ExecutorService executorService = Executors.newFixedThreadPool(5); //         ExecutorService executorService = Executors.newSingleThreadExecutor();
 
+                ExecutorService executorService2 = Executors.newFixedThreadPool(7); 
+                
                 for (int i = 0; i < 5; i++) { 
                         executorService.execute(new TestRunnable()); 
                         System.out.println("************* a" + i + " *************"); 
                 } 
                 executorService.shutdown(); 
+                
+                
+                for (int i = 0; i < 5; i++) { 
+                    executorService2.execute(new TestRunnable()); 
+                    System.out.println("************* b" + i + " *************"); 
+            } 
+            executorService2.shutdown(); 
         } 
 }
 

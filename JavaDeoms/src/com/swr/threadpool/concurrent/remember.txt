@@ -1,7 +1,8 @@
 线程池  该离职可以执行
 
 
-在Java5之后，并发线程这块发生了根本的变化，最重要的莫过于新的启动、调度、管理线程的一大堆API了。在Java5以后，通过Executor来启动线程比用Thread的start（）更好。在新特征中，可以很容易控制线程的启动、执行和关闭过程，还可以很容易使用线程池的特性。
+在Java5之后，并发线程这块发生了根本的变化，最重要的莫过于新的启动、调度、管理线程的一大堆API了。在Java5以后，通过Executor来启动线程比用Thread的start（）更好。在新特征中，
+可以很容易控制线程的启动、执行和关闭过程，还可以很容易使用线程池的特性。
 
 　　一、创建任务
 
@@ -15,7 +16,8 @@
 
 　　Executors此包中所定义的 Executor、ExecutorService、ScheduledExecutorService、ThreadFactory 和 Callable 类的工厂和实用方法。
 
-　　ExecutorService提供了管理终止的方法，以及可为跟踪一个或多个异步任务执行状况而生成 Future 的方法。 可以关闭 ExecutorService，这将导致其停止接受新任务。关闭后，执行程序将最后终止，这时没有任务在执行，也没有任务在等待执行，并且无法提交新任务。
+　　ExecutorService提供了管理终止的方法，以及可为跟踪一个或多个异步任务执行状况而生成 Future 的方法。 可以关闭 ExecutorService，这将导致其停止接受新任务。
+关闭后，执行程序将最后终止，这时没有任务在执行，也没有任务在等待执行，并且无法提交新任务。
 
 　　executorService.execute（new TestRunnable（））；
 
@@ -107,7 +109,9 @@ pool-1-thread-4
 
 　五、获取任务的执行的返回值
 
-　　在Java5之后，任务分两类：一类是实现了Runnable接口的类，一类是实现了Callable接口的类。两者都可以被ExecutorService执行，但是Runnable任务没有返回值，而Callable任务有返回值。并且Callable的call（）方法只能通过ExecutorService的submit（Callable<T> task） 方法来执行，并且返回一个 <T> Future<T>，是表示任务等待完成的 Future.
+　　在Java5之后，任务分两类：一类是实现了Runnable接口的类，一类是实现了Callable接口的类。两者都可以被ExecutorService执行，但是Runnable任务没有返回值，
+而Callable任务有返回值。并且Callable的call（）方法只能通过ExecutorService的submit（Callable<T> task） 方法来执行，并且返回一个 <T> Future<T>，
+是表示任务等待完成的 Future.
 
 　　public interface Callable<V>返回结果并且可能抛出异常的任务。实现者定义了一个不带任何参数的叫做 call 的方法。
 
@@ -119,7 +123,8 @@ pool-1-thread-4
 
 　　当将一个Callable的对象传递给ExecutorService的submit方法，则该call方法自动在一个线程上执行，并且会返回执行结果Future对象。
 
-　　同样，将Runnable的对象传递给ExecutorService的submit方法，则该run方法自动在一个线程上执行，并且会返回执行结果Future对象，但是在该Future对象上调用get方法，将返回null.
+　　同样，将Runnable的对象传递给ExecutorService的submit方法，则该run方法自动在一个线程上执行，并且会返回执行结果Future对象，但是在该Future对象上调用get方法，
+将返回null.
 
 　　遗憾的是，在Java API文档中，这块介绍的很糊涂，估计是翻译人员还没搞清楚的缘故吧。或者说是注释不到位。下面看个例子：
 
@@ -214,10 +219,13 @@ Process finished with exit code 0
 
  
 
-线程池可以解决两个不同问题：由于减少了每个任务调用的开销，它们通常可以在执行大量异步任务时提供增强的性能，并且还可以提供绑定和管理资源（包括执行集合任务时使用的线程）的方法。每个 ThreadPoolExecutor 还维护着一些基本的统计数据，如完成的任务数。
+线程池可以解决两个不同问题：由于减少了每个任务调用的开销，它们通常可以在执行大量异步任务时提供增强的性能，并且还可以提供绑定和管理资源（包括执行集合任务时使用的线程）的方法。
+每个 ThreadPoolExecutor 还维护着一些基本的统计数据，如完成的任务数。
 
  
 
-为了便于跨大量上下文使用，此类提供了很多可调整的参数和扩展挂钩。但是，强烈建议程序员使用较为方便的 Executors 工厂方法Executors.newCachedThreadPool()（无界线程池，可以进行自动线程回收）、Executors.newFixedThreadPool(int)（固定大小线程池）和Executors.newSingleThreadExecutor()（单个后台线程），它们均为大多数使用场景预定义了设置。
+为了便于跨大量上下文使用，此类提供了很多可调整的参数和扩展挂钩。但是，强烈建议程序员使用较为方便的 Executors 工厂方法Executors.newCachedThreadPool()（无界线程池，
+可以进行自动线程回收）、Executors.newFixedThreadPool(int)（固定大小线程池）和Executors.newSingleThreadExecutor()（单个后台线程），
+它们均为大多数使用场景预定义了设置。
 
  
